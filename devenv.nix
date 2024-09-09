@@ -7,6 +7,8 @@
     scikit-learn
     catboost
     pandas
+    langchain
+    huggingface-hub
     polars
     numpy
     seaborn
@@ -26,5 +28,11 @@
     '';
 
     libraries = [ pkgs.cairo ];
+  };
+
+  pre-commit.hooks = {
+    shellcheck.enable = true;
+    markdownlint.enable = true;
+    ruff.enable = true;
   };
 }
